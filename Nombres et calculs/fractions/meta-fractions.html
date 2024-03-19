@@ -1,0 +1,1414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<!-- 2024-03-19 mar. 10:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Méta fraction</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Méta fraction</h1>
+
+<div id="outline-container-org67f4c42" class="outline-2">
+<h2 id="org67f4c42"><span class="section-number-2">1.</span> Cours sur les fractions</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org37e2350" class="outline-3">
+<h3 id="org37e2350"><span class="section-number-3">1.1.</span> À quoi servent les fractions ?</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<div id="org389c992" class="figure">
+<p><img src="fraction-utilite.png" alt="fraction-utilite.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org2917060" class="outline-3">
+<h3 id="org2917060"><span class="section-number-3">1.2.</span> La fraction vue comme une <a href="#org0853584">division</a>.</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org496cb29" class="outline-4">
+<h4 id="org496cb29"><span class="section-number-4">1.2.1.</span> Exemple avec une tablette de chocolat</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<div id="org14ab350" class="figure">
+<p><img src="images/images/carre-chocolat.svg" alt="carre-chocolat.svg" class="org-svg" />
+</p>
+</div>
+
+<div class="question" id="orgc12e91a">
+<p>
+Je mange \(3\) carrés de chocolat dans une tablette qui en contient
+\(12\). 
+Quelle est la proportion de chocolat que j'ai mangée ?
+</p>
+
+</div>
+
+<div class="reponse" id="org3a9eabb">
+<p>
+\(\frac{3}{12} = 3 \div 12 = 0,25 = 25\%\)
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org079c3d8" class="outline-4">
+<h4 id="org079c3d8"><span class="section-number-4">1.2.2.</span> Définition</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<div class="defi" id="org1e743c8">
+<p>
+Soit \(a\) et \(b\) deux nombres. On suppose \(b\) différent de \(0\). Alors
+la notation \(\frac{a}{b}\) est le résultat de l'opération de \(a\) qui
+est divisé par \(b\). Autrement dit :
+\[
+\frac{a}{b} = a \div b
+\]
+</p>
+
+</div>
+
+<div class="question" id="org00e4a84">
+<p>
+Pourquoi demande-t-on à ce que \(b\) soit différent de \(0\) ?
+</p>
+
+</div>
+
+<div class="reponse" id="orge2e7cc8">
+<p>
+Parce que l'on ne peut pas diviser par \(0\).
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdf697fd" class="outline-3">
+<h3 id="orgdf697fd"><span class="section-number-3">1.3.</span> La fraction vue comme une solution d'une équation</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgf71b4d3" class="outline-4">
+<h4 id="orgf71b4d3"><span class="section-number-4">1.3.1.</span> Définition</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<div class="defi" id="org9e2b9d0">
+<p>
+Soit \(a\) et \(b\) deux nombres. On suppose que \(b\) est différent de
+\(0\). 
+</p>
+
+<p>
+Alors l'équation \(bx = a\) admet une seule solution, donnée par \(x = \frac{a}{b}\).
+</p>
+
+</div>
+
+<div class="question" id="orgc7821f0">
+<p>
+Pourquoi faut-il supposer que \(b \not = 0\) ?
+</p>
+
+</div>
+
+<div class="reponse" id="org826105e">
+<p>
+Si \(b=0\) alors \(bx = 0\) quelque soit \(x\). Donc, si \(a\) est différent
+de \(0\), c'est impossible de trouver une solution. C'est pour cela
+qu'il faut supposer que \(b \not = 0\).
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8d66467" class="outline-4">
+<h4 id="org8d66467"><span class="section-number-4">1.3.2.</span> Exemple</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<div class="question" id="org9954bb8">
+<p>
+J'ai mangé une certaine proportion \(x\) de ma tablette de chocolat, qui
+contient \(12\) carrés de chocolat. Quelle proportion dois-je prendre
+pour manger exactement \(3\) carrés de chocolat ?
+</p>
+
+</div>
+
+<div class="reponse" id="orge62e8b1">
+<p>
+Si l'on multiplie la proportion \(x\) par le nombre de
+carrés, ici \(12\), on obtient le nombre de carrés mangés, c'est-à-dire
+\(3\).
+</p>
+
+<p>
+Ainsi, on cherche la proportion \(x\) telle que :
+\[
+12 x = 3
+\]
+Donc la proportion recherchée est \(x = \dfrac{3}{12}\)
+</p>
+
+</div>
+
+<div class="question" id="orgbd1834e">
+<p>
+J'ai deux balles noires dans une urne parmi \(5\) balles au
+total. Je tire une balle au hasard dans l'urne, et toutes les balles
+sont indiscernables. Quelles sont les chances d'obtenir une balle
+noire ?
+</p>
+
+</div>
+
+<div class="reponse" id="orgaa09d5e">
+<p>
+J'ai deux chances sur cinq (\(\frac{2}{5}\)) de tomber sur une balle
+noire. En effet, il y a deux balles qui sont noires parmi les \(5\). De
+plus, toutes les balles de l'urne ont autant de chances d'être tirées.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgee9b8cd" class="outline-3">
+<h3 id="orgee9b8cd"><span class="section-number-3">1.4.</span> Propriétés magiques des fractions.</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org9dc2ff3" class="outline-4">
+<h4 id="org9dc2ff3"><span class="section-number-4">1.4.1.</span> L'égalité entre deux fractions sur une tablette de chocolat</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<div class="ex" id="org123173b">
+<p>
+Si l'on reprend la tablette de chocolat rencontrée plus haut :
+</p>
+
+
+<div id="orgfa6823f" class="figure">
+<p><img src="images/carre-chocolat.svg" alt="carre-chocolat.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+On s'aperçoit que \(\frac{3}{12}\) représente aussi le quart de notre
+tablette. Donc on peut en déduire que :
+\[
+\frac{3}{12} = 1 \text{ tablette divisée par } 4 = \frac{1}{4}
+\]
+</p>
+
+<p>
+Puisque l'on peut décrire la proportion mangée de la tablette de
+<b>deux</b> manières différentes (en comptant le nombre de carrés mangés,
+ou bien en regardant le nombre de colone mangée) on en déduit la
+propriété fondamentale suivante :
+</p>
+
+<p>
+\[
+\frac{3}{12} = \frac{1}{4}
+\]
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org60b080f" class="outline-4">
+<h4 id="org60b080f"><span class="section-number-4">1.4.2.</span> L'égalité entre fractions sur un camembert.</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<div class="ex" id="orga7c4b46">
+<p>
+Étudions maintenant le camembert coulant découpé en \(10\) tranches
+égales. Je me réserve \(6\) tranches de ce camembert. 
+</p>
+
+</div>
+
+
+
+<p>
+Voici la part que je me suis réservée :
+</p>
+
+<div id="org9534a34" class="figure">
+<p><img src="images/six-sur-dix-camembert.svg" alt="six-sur-dix-camembert.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure&nbsp;1&nbsp;: </span>Quelle est la proportion du camembert que je me suis réservée ?</p>
+</div>
+
+<p>
+Mais on peut aussi couper le cambert en \(5\) tranches égales, voici ce
+qui se passe quand je choisi \(3\) tranches parmi les \(5\) :
+</p>
+
+
+<div id="orgb922aa6" class="figure">
+<p><img src="images/trois-sur-cinq-camembert.svg" alt="trois-sur-cinq-camembert.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure&nbsp;2&nbsp;: </span>C'est exactement le même camembert, mais j'ai coupé en \(5\) tranches égales, et j'ai pris cette fois \(3\) parts.</p>
+</div>
+
+<div class="question" id="org6adf6c9">
+<p>
+Que remarques-tu dans les deux situations ?
+</p>
+
+<p>
+Qu'est-ce qui a changé ? Qu'est-ce qui n'a <b>pas</b> changé ?
+</p>
+
+</div>
+
+<div class="reponse" id="org01fce49">
+<p>
+La proportion de fromage dans les deux cas <b>est identiques* ! Puisque
+la proportion est donnée par la fraction, on peut en déduire une
+*égalité de fraction</b>. Laquelle ?
+</p>
+
+</div>
+
+<div class="prop" id="org27639a7">
+<p>
+Grâce aux camemberts, on peut fierement annoncer que :
+\[
+\dfrac{6}{10} = \dfrac{3}{5}
+\]
+</p>
+
+</div>
+
+<div class="question" id="org3359430">
+<p>
+Si je coupe le cambert en \(20\) parts égales, combien de part je dois
+me réserver pour avoir la même proportion que dans les situations
+précédentes ?
+</p>
+
+</div>
+
+<div class="reponse" id="orgcd4d869">
+<p>
+Vous pouvez regarder l'image de la figure ci-dessous.
+</p>
+
+</div>
+
+
+<div id="orgab8a50c" class="figure">
+<p><img src="images/douze-sur-vingt-camembert.svg" alt="douze-sur-vingt-camembert.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure&nbsp;3&nbsp;: </span>Réponse illustreé</p>
+</div>
+
+<div class="question" id="orga5eec7e">
+<p>
+Quelles sont les trois fractions égales que nous avons ainsi mise en
+évidence ?
+</p>
+
+</div>
+
+<div class="reponse" id="orgc15029c">
+<p>
+\[
+\frac{3}{5} = \frac{6}{10} = \frac{12}{20}
+\]
+</p>
+
+</div>
+
+<p>
+On peut illustrer l'égalité de fraction avec ces trois images :
+</p>
+<div class="org-center">
+
+<div id="org6905bbb" class="figure">
+<p><img src="images/trois-sur-cinq-camembert.svg" alt="trois-sur-cinq-camembert.svg" class="org-svg" />
+</p>
+</div>
+
+<div id="org4dfb85d" class="figure">
+<p><img src="images/six-sur-dix-camembert.svg" alt="six-sur-dix-camembert.svg" class="org-svg" />
+</p>
+</div>
+
+<div id="org7070f52" class="figure">
+<p><img src="images/douze-sur-vingt-camembert.svg" alt="douze-sur-vingt-camembert.svg" class="org-svg" />
+</p>
+</div>
+</div>
+<div class="question" id="orgb0009f3">
+<p>
+Plus généralement, quelle est la propriété sur les fractions que l'on
+vient de mettre en évidence ?
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3880c89" class="outline-4">
+<h4 id="org3880c89"><span class="section-number-4">1.4.3.</span> Simplifier une fraction : la théorie .</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+Grâce à la partie précédente, on peut donner une définition de deux
+fractions égales.
+</p>
+
+<div class="defi" id="orgda9789a">
+<p>
+Soit \(a\) et \(b\) deux nombres, tel que \(b\) est non nul. Alors,
+pour tout nombre \(k\), nous avons :
+\[
+\frac{a}{b} = \frac{k\times a}{k \times b}
+\]
+</p>
+
+<p>
+Réciproquement, si deux fractions sont égales, alors il existe un
+nombre \(k\) tel que le numérateur et le dénominateur de la première
+fraction soit \(k\) fois plus grand que le numérateur et le dénominateur
+de la deuxième fraction.
+</p>
+
+</div>
+
+
+<div class="question" id="org9571b90">
+<p>
+Donnez, à l'aide des situations fromagères précédentes, un exemple de
+l'utilisation de la proposition en proposant des valeurs de \(a\), \(b\)
+et \(k\) pertinentes.
+</p>
+
+</div>
+
+<div class="question" id="org9bacfb9">
+<p>
+Quelles sont les fractions parmi la liste ci-dessous qui sont égales ?
+\[
+\frac{20}{24}\quad \frac{8}{20}\quad \frac{30}{36}\quad \frac{10}{12}\quad \frac{16}{6}\quad \frac{4}{10}\quad 
+\]
+</p>
+
+</div>
+
+<div class="prop" id="org5e0df5b">
+<p>
+Soit \(p\) et \(q\) sont deux fractions telles que \(p = \dfrac{a}{b}\) et \(q
+= \dfrac{c}{d}\). 
+</p>
+
+
+<p>
+Alors, les deux fractions \(p\) et \(q\) sont égales (\(p = q\)) si et
+seulement si \(a \times d = b \times c\).
+</p>
+
+</div>
+
+<p>
+Pour affiner votre compréhension, vous pouvez vous tester sur les
+questions suivantes. Attention, les dernières questions sont bien plus
+difficiles !
+</p>
+
+<div class="question" id="org64f443c">
+<ul class="org-ul">
+<li>Est-il possible que deux fractions soient égales alors qu'elles n'ont
+pas le même dénominateur ?</li>
+<li>Est-il possible que deux fractions soient égales alors qu'elles
+n'ont pas le même numérateur ?</li>
+<li>Vérifier à l'aide de la proposition précédente l'égalité :
+\(\frac{12}{32}=\frac{6}{16}\).</li>
+<li>Vérifier à l'aide de la proposition précédente que les fractions
+\(\frac{19}{48}\) et \(\frac{6}{16}\) ne sont pas égales.</li>
+<li>Vérifier à l'aide de la calculatrice que \(9 \times 56 = 24 \times
+  21\). Donner plusieurs égalités de fractions à partir de ce résultat.</li>
+<li>Si \(a\) et \(b\) sont deux nombres entiers divisibles par deux, que
+peut-on dire de \(p = \frac{a}{b}\) ?</li>
+<li>Si \(p\) et \(q\) sont deux fractions égales, que peut-on dire de \(p'\)
+et \(q'\) les fractions obtenues en échangeant le numérateur et le
+dénominateur de \(p\) et \(q\) respectivement ?</li>
+<li>Si \(\dfrac{a}{b} = \dfrac{c}{d}\), que peut-on dire de \(\dfrac{d}{b}\)
+et \(\dfrac{c}{a}\) ?</li>
+<li>Si on note \(p = \frac{a_1}{a_2}\) et \(q=\frac{a_3}{a_4}\) et on
+suppose que \(p = q\) peut s'écrire de façon raccourcie \((1, 2, 3,
+  4)\). Montrer alors que \((2, 1, 4, 3)\) est aussi une situation
+d'égalité. Faites la liste des toutes les égalités sous la forme
+\((n, m, l, k)\) où \(n, m, l, k\) sont des entiers entre \(1\) et \(4\)
+tous différents.</li>
+</ul>
+
+</div>
+
+<div class="dem" id="org5566d28">
+<p>
+Soit \(p = \frac{a}{b} = \frac{c}{d} = q\). Alors, en multipliant ces
+égalités par les dénominateurs de chaque fraction (c'est à dire par \(b
+\times d\)), on prouve la démonstration. Pour la réciproque il suffit
+de faire l'opération <a href="#orgc6e31d0">inverse</a> (une <a href="#org0853584">division</a>).
+</p>
+
+</div>
+
+<div class="defi" id="orgb7ffeb5">
+<p>
+Soit \(p = \frac{a}{b}\) une fraction. Alors, on dit que \(p\) est sous la
+forme irréductible si et seulement si \(a\) et \(b\) n'ont pas de diviseur
+commun.
+</p>
+
+</div>
+
+<div class="prop" id="org2013fa0">
+<p>
+Soit \(\dfrac{a}{b}\) une fraction. Soit \(d = \mathrm{pgcd}(a,
+b)\). Soit \(a'= d \times a\) et \(b' = d \times b\). Alors,
+\(\dfrac{a'}{b'}\) est la forme irréductible de \(\dfrac{a}{b}\).
+</p>
+
+</div>
+
+<div class="ex" id="org8789992">
+<p>
+On souhaite simplifier la fraction \(\frac{135}{95}\).
+On peut faire la liste des diviseurs de \(135\) et \(95\) :
+</p>
+
+<div id="orge8cd6a0" class="figure">
+<p><img src="diviseur135.svg" alt="diviseur135.svg" class="org-svg" />
+</p>
+</div>
+
+
+<div id="orgd937819" class="figure">
+<p><img src="images/diviseur95.svg" alt="diviseur95.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+On voit donc que \(\textrm{pgcd}(135, 95) = 5\), donc on sait que notre
+fraction est irréductible si et seulement si on divise \(135\) et \(95\)
+par \(5\). Autrement dit, le calcul suivant donne la forme irréductible
+de \(\frac{135}{95}\) :
+\[
+  \frac{135}{95} = \frac{5 \times 27}{5 \times 19} = \frac{27}{19}
+\]
+</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orga9bc938" class="outline-3">
+<h3 id="orga9bc938"><span class="section-number-3">1.5.</span> Calculs avec les fractions</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-org157b5ab" class="outline-4">
+<h4 id="org157b5ab"><span class="section-number-4">1.5.1.</span> L'<a id="orgbfec4b7">addition</a> de deux fractions</h4>
+<div class="outline-text-4" id="text-1-5-1">
+</div>
+<ol class="org-ol">
+<li><a id="org2d6d6f4"></a>Voir l'<a href="#orgbfec4b7">addition</a> de fraction sur un schéma.<br />
+<div class="outline-text-5" id="text-1-5-1-1">
+<p>
+Imaginons que l'on effectuer le calcul suivant :
+\[
+S = \frac{5}{6} + \frac{7}{12}
+\]
+On vérifie que les deux fractions sont irréductibles (\(5\) et \(6\) n'ont
+pas de facteur en commun, pareil pour \(7\) et \(12\)).
+</p>
+
+<p>
+On peut représenter ces deux fractions par des parts de rectangles comme
+il suit :
+</p>
+
+<div id="org804204d" class="figure">
+<p><img src="cinq-sur-six-rect.svg" alt="cinq-sur-six-rect.svg" class="org-svg" />
+</p>
+</div>
+
+
+<div id="org2a3c054" class="figure">
+<p><img src="sept-sur-douze-rect.svg" alt="sept-sur-douze-rect.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+On souhaite compter la proportion que représente la somme des
+rectangles gris. Puisqu'il n'ont pas la même largeur, <b>on ne peut pas
+comparer les parties grisées des deux situations !</b>
+</p>
+
+<div class="question" id="orga7711b6">
+<p>
+Pourquoi les deux rectangles n'ont pas été découpés avec le même
+nombre de part ?
+</p>
+
+<p>
+Anticipe la suite : comment découper l'un des deux rectangles afin que
+les deux rectangles soit découpés en autant de part, mais en
+conservant la proportion grisée de chacun d'entre eux.
+</p>
+
+</div>
+
+<p>
+On se rappelle que l'on peut transformer \(\frac{5}{6}\) en
+\(\frac{10}{12}\) puisque \(\frac{5}{6} = \frac{2 \times 5}{2 \times 6} =
+\frac{10}{12}\). Ainsi, la fraction \(\frac{5}{6}\) peut se représenter
+par les situations suivantes :
+</p>
+
+
+<div id="org7af8c87" class="figure">
+<p><img src="cinq-sur-six-rect.svg" alt="cinq-sur-six-rect.svg" class="org-svg" />
+</p>
+</div>
+
+<div id="org9874a0d" class="figure">
+<p><img src="dix-sur-douze-rect.svg" alt="dix-sur-douze-rect.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+(vous devriez revoir la partie avec les fromages si ce passage n'est
+pas clair) 
+</p>
+
+<p>
+Et maintenant les deux rectangles sont comparables :
+</p>
+
+
+<div id="orgba6cf32" class="figure">
+<p><img src="dix-sur-douze-rect.svg" alt="dix-sur-douze-rect.svg" class="org-svg" />
+</p>
+</div>
+
+<div id="org6b88603" class="figure">
+<p><img src="cinq-sur-six-rect.svg" alt="cinq-sur-six-rect.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+On compte exactement \(10 + 7 = 17\) douzième de rectangle en comptant les
+parties grisées (qui représente chacune un douzième du rectangle
+total) donc, on a :
+\[
+\frac{10}{12} + \frac{7}{12} = \frac{17}{12}
+\]
+Si on revient à notre question de départ :
+</p>
+
+<div class="prop" id="orgaf0a203">
+<p>
+\[
+S = \frac{5}{6} + \frac{7}{12} = \frac{10}{12} + \frac{7}{12} = \frac{17}{12}
+\]
+Et \(\frac{17}{12}\) est irréductible, car \(17\) et \(12\) n'ont pas de
+facteur en commun.
+</p>
+
+</div>
+
+<div class="question" id="org04a21cd">
+<p>
+Comment pouvait-on savoir qu'il suffisait de multiplier \(6\) par \(2\)
+pour obtenir \(12\) ? Autrement dit, comment déterminer l'opération qui
+sert à transformer chaque fraction pour qu'elle ait le même
+dénominateur ?
+</p>
+
+</div>
+
+<div class="reponse" id="org4c43dda">
+<p>
+Il faut trouver le plus petit commun multiple entre \(6\) et
+\(12\). Autrement dit, quel est le nombre qui appartient <b>à la fois</b> à
+la table de \(6\) <b>et</b> à la table de \(12\) et qui est le plus petit. Il
+se trouve que ce nombre est \(12\). Ainsi, il faut multiplier \(6\) par
+\(2\) et \(12\) par \(1\).
+</p>
+
+</div>
+
+<div class="question" id="org3997d95">
+<p>
+Tracer le plus précisemment possible les situations suivantes, et
+trouver la somme dans chaque cas :
+</p>
+<ol class="org-ol">
+<li>\(\frac{1}{3} + \frac{1}{9}\)</li>
+<li>\(\frac{1}{2}+\frac{1}{3}\)</li>
+</ol>
+
+</div>
+</div>
+</li>
+<li><a id="org1b46079"></a>En théorie<br />
+<div class="outline-text-5" id="text-1-5-1-2">
+<div class="prop" id="org8aa697b">
+<p>
+Puisque \(p = \frac{a}{b}\) et \(q = \frac{c}{d}\) sont deux nombres,
+alors \(p + q\) est un calcul qui existe. De plus, \(p + q\) est une
+fraction, et on a en général :
+\[
+p + q = \frac{a}{b} + \frac{c}{d} = \frac{ad + cb}{bd}
+\]
+</p>
+
+</div>
+
+<p>
+Cette proposition <b>n'est jamais à appliquer par cœur, car elle est
+loin d'être optimale pour les calculs</b>.
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org9f02975" class="outline-4">
+<h4 id="org9f02975"><span class="section-number-4">1.5.2.</span> La <a id="org4ccf329">multiplication</a> de deux fractions</h4>
+<div class="outline-text-4" id="text-1-5-2">
+</div>
+<ol class="org-ol">
+<li><a id="org396156d"></a>Voir la <a href="#org4ccf329">multiplication</a> de fractions sur un schéma<br />
+<div class="outline-text-5" id="text-1-5-2-1">
+<p>
+On cherche à comprendre comment calculer le produit \(P\) suivant :
+\[
+P = \frac{4}{5} \times \frac{3}{7}
+\]
+Comment peut-on visualiser ce calcul ?
+</p>
+
+<p>
+Très souvent, on peut comprendre une <a href="#org4ccf329">multiplication</a> par le calcule de
+l'aire d'un rectangle. Pour rappel, si un rectangle est de longueur
+\(l\) et de largeur \(L\), alors son aire se calcule par \(l \times
+L\). Ici, on va donc prendre \(l = \frac{4}{5}\) et \(L = \frac{3}{7}\).
+</p>
+
+<p>
+Ainsi, on va insérer dans un carré de coté \(1\), un rectangle dont
+l'aire nous intéresse.
+</p>
+
+<p>
+Considérez la situation suivante :
+</p>
+
+
+<div id="orgd7770d7" class="figure">
+<p><img src="quatre-cinq-fois-trois-sept.svg" alt="quatre-cinq-fois-trois-sept.svg" class="org-svg" />
+</p>
+</div>
+
+<div class="question" id="org67cf4fe">
+<p>
+Quelle est l'aire du carré ?
+</p>
+
+<p>
+Quelle est l'aire d'un sous rectangle ?
+</p>
+
+</div>
+
+<div class="reponse" id="org14c1e01">
+<p>
+L'aire du carré est \(1\), puisque chaque côté mesure \(1\). 
+</p>
+
+<p>
+Chaque sous rectangle est identique. On a donc partagé le carré en \(5
+\times 7 = 35\) sous-rectangles identiques. Ainsi, un rectangle admet
+une aire de \(\frac{1}{35}\).
+</p>
+
+</div>
+
+<p>
+Or, on compte \(4 \times 3 = 12\) petits rectangles en bleu. Il vient :
+\[
+  P = \frac{4}{5} \times \frac{3}{7} = \frac{12}{35}
+\]
+</p>
+
+<div class="question" id="orgab98a1e">
+<p>
+Quelle <a href="#org4ccf329">multiplication</a> de fractions s'y cache dans la situation
+suivante ? Quel est le résultat de cette <a href="#org4ccf329">multiplication</a> ?
+</p>
+
+</div>
+
+
+<div id="orgc317bb0" class="figure">
+<p><img src="images/trois-cinq-fois-quatre-sept.svg" alt="trois-cinq-fois-quatre-sept.svg" class="org-svg" />
+</p>
+</div>
+
+<div class="question" id="org1e34356">
+<p>
+Donner un exemple de produit de fraction telle que l'aire en bleu soit
+plus grande que la moitié de l'aire du carré.
+</p>
+
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org790b8be" class="outline-4">
+<h4 id="org790b8be"><span class="section-number-4">1.5.3.</span> La <a id="org0853584">division</a> de deux fractions</h4>
+<div class="outline-text-4" id="text-1-5-3">
+</div>
+<ol class="org-ol">
+<li><a id="org4a764cb"></a>Avec des exemples<br />
+<div class="outline-text-5" id="text-1-5-3-1">
+<p>
+Commençons par un exemple.
+</p>
+
+<div class="ex" id="org9e188fb">
+<p>
+Combien y'a-t-il de tiers (\(\frac{1}{4}\)) dans trois-quart
+(\(\frac{3}{4}\)) ?
+</p>
+
+<p>
+On peut répondre assez intuitivement \(3\), puisque :
+\[
+\frac{3}{4} = \frac{1}{4} + \frac{1}{4} + \frac{1}{4} = 3 \times \frac{1}{4}
+\]
+</p>
+
+</div>
+
+<p>
+À partir de cet exemple, on peut donc en conclure que :
+</p>
+<div class="prop" id="orgcaf1d53">
+<p>
+\[
+\frac{3}{4} \div \frac{1}{4} = 3
+\]
+Que l'on peut écrire comme un étage de fractions, puisqu'une <a href="#org0853584">division</a>
+<b>est</b> une fraction.
+</p>
+
+<p>
+\[
+\frac{\frac{3}{4}}{\frac{1}{4}} = 3
+\]
+</p>
+
+</div>
+
+<p>
+Mais comment répondre à la question :
+</p>
+<div class="ex" id="org8bc854d">
+<p>
+Combien y'a-t-il de tiers dans une moitié ?
+</p>
+
+</div>
+
+<p>
+On cherche à calculer \(\frac{1}{2} \div \frac{1}{3}\). Comment faire ?
+</p>
+</div>
+</li>
+
+<li><a id="org1fc05b0"></a>Diviser revient à multiplier par l' <a id="orgc6e31d0">inverse</a><br />
+<div class="outline-text-5" id="text-1-5-3-2">
+<div class="prop" id="orge0c418b">
+<p>
+Soit \(a\) et \(b\) deux nombres différents de \(0\).
+</p>
+
+<p>
+Alors :
+\[
+\frac{a}{b} = a \div b = a \times \frac{1}{b}
+\]
+Autrement dit, diviser par \(b\) revient à multiplier par \(\frac{1}{b}\).
+</p>
+
+</div>
+
+<div class="defi" id="orgc20389d">
+<p>
+Soit \(b\) un nombre non nul. Alors, on appelle l'<a href="#orgc6e31d0">inverse</a> d'un nombre le
+nombre \(\frac{1}{b}\). L'<a href="#orgc6e31d0">inverse</a> de l'<a href="#orgc6e31d0">inverse</a> de \(b\) est \(b\). Autrement
+dit :
+\[
+\frac{1}{\frac{1}{b}} = b
+\]
+</p>
+
+</div>
+
+<div class="prop" id="orgcfbac79">
+<p>
+Soit \(\frac{p}{q}\) une fraction, alors son <a href="#orgc6e31d0">inverse</a> est égal à \(\frac{q}{p}\).
+</p>
+
+</div>
+
+<div class="dem" id="orgc5bce8d">
+<p>
+On veut montrer que :
+\[
+\frac{1}{\frac{p}{q}} = \frac{q}{p}
+\]
+Or :
+</p>
+\begin{align*}
+  \frac{1}{\frac{p}{q}} &= \frac{q}{q\times \frac{p}{q}}\\
+  \frac{1}{\frac{p}{q}} &= \frac{q}{p}
+\end{align*}
+<p>
+C'est ce que l'on voulait démontrer.
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="orgdb2eddc"></a>Diviser des fractions : la méthode.<br />
+<div class="outline-text-5" id="text-1-5-3-3">
+<p>
+Si on revient à notre problème précédent :
+</p>
+
+<blockquote>
+<p>
+On cherche à calculer \(\frac{1}{2} \div \frac{1}{3}\). Comment faire ?
+</p>
+</blockquote>
+
+<p>
+On voit maintenant que l'on peut mener les calculs comme il suit :
+</p>
+<div class="ex" id="orgf5e7b55">
+<p>
+\[
+\frac{1}{2} \div \frac{1}{3} = \frac{\frac{1}{2}}{\frac{1}{3}} = \frac{1}{2} \times \frac{3}{1} = \frac{1}{2} \times 3 = \frac{3}{2}
+\]
+</p>
+
+</div>
+<p>
+Donc on peut dire qu'il y a \(1,5\) tiers dans une moitié. Cette phrase
+est <i>beaucoup</i> plus compliquée à comprendre que le calcul fait dans
+l'exemple précédent. C'est l'intérêt du calcul : on obtient le
+résultat sans maux de crâne !
+</p>
+
+<div class="question" id="org58f5317">
+<ol class="org-ol">
+<li>Il y a combien de cinquième(s) dans le quart ?</li>
+<li>Quelle est la solution à l'équation \(\frac{1}{2} x = \frac{1}{3}\) ?</li>
+<li>Donner un exemple intéressant d'une <a href="#org0853584">division</a> entre deux fractions qui admet comme résultat
+\(2\).</li>
+<li>Montrer que l'<a href="#orgc6e31d0">inverse</a> d'un produit est égale aux produits des
+inverses (encore une phrase bien plus compliquée à comprendre qu'à
+réaliser en calcul, ne soyez pas surpris si vous ne la comprenez
+pas du premier coup).</li>
+</ol>
+
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgb49894e" class="outline-3">
+<h3 id="orgb49894e"><span class="section-number-3">1.6.</span> Erreurs possibles avec les fractions !&#xa0;&#xa0;&#xa0;<span class="tag"><span class="fiche">fiche</span></span></h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+
+<div id="outline-container-orgfefea20" class="outline-4">
+<h4 id="orgfefea20"><span class="section-number-4">1.6.1.</span> Simplification malhonnête</h4>
+<div class="outline-text-4" id="text-1-6-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgbbd0281"></a>Forme de l'erreur<br />
+<div class="outline-text-5" id="text-1-6-1-1">
+<div class="prop" id="org60fa449">
+<p>
+On peut simplifier une fraction si et seulement si le numérateur <b>et</b>
+le dénominateur partage un même <b>facteur en commun</b>.
+</p>
+
+<p>
+S'il n'y a aucun facteur commun entre le dénominateur et le
+numérateur, alors la fraction est dite <b>irréductible</b> (c'est-à-dire
+que l'on ne peut pas la réduire, la simplifier).
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="org9862537"></a>Si le numérateur et le dénominateur sont des nombres<br />
+<div class="outline-text-5" id="text-1-6-1-2">
+<div class="ex" id="orgc243e38">
+<p>
+Dans le cas suivant, je peux effectuer la simplification par \(5\) :
+\[
+\frac{65}{120} = \frac{5 \times 13}{5 \times 24} = \frac{\not 5 \times
+13}{\not 5 \times 24} = \frac{13}{24}
+\]
+car \(65\) et \(120\) admettent \(5\) comme <b>facteurs communs</b>.
+</p>
+
+</div>
+
+<p>
+La simplification suivante est fausse :
+\[
+\frac{18}{29} = \frac{5 + 13}{5 + 24} \not = \frac{13}{24}
+\]
+Car \(5\) n'est <b>pas</b> un facteur commun de \(18\) et \(29\).
+</p>
+</div>
+</li>
+
+<li><a id="orge32d287"></a>Si le numérateur et le dénominateur sont des expressions<br />
+<div class="outline-text-5" id="text-1-6-1-3">
+<div class="ex" id="org6e47226">
+<p>
+Voici une simplification correcte (si l'on admet que \(x \not = 0\):
+\[
+\frac{x^2 - x}{2x^2 - 3x}=\frac{x(x-1)}{x(2x-3)}=\frac{x-1}{2x-3}
+\]
+car le \(x\) est un facteur commun de \(x^2 - x\) et \(2x^2 - 3x\), on peut
+donc le simplifier (et \(x\) est non nul, puisqu'on l'a supposé ainsi).
+</p>
+
+</div>
+
+<p>
+Voici une factorisation incorrecte :
+\[
+\frac{x^2 - 1}{2x + 3} \not = \frac{x - 1}{2 + 3}
+\]
+car \(x\) n'est pas un facteur de l'expression \(x^2 - 1\), ni de \(2x + 3\).
+</p>
+</div>
+</li>
+
+<li><a id="orgbbdc895"></a>Pourquoi je fais cette erreur ? Comment se corriger ?<br />
+<div class="outline-text-5" id="text-1-6-1-4">
+<p>
+Plusieurs causes possibles, dont :
+</p>
+<ol class="org-ol">
+<li>Tu confonds les opérations de <a href="#org4ccf329">multiplication</a> avec celle
+d'<a href="#orgbfec4b7">addition</a>. Il faut revoir le sens du mot «facteur commun» en
+mathématique.</li>
+<li>Tu es allé trop vite dans tes calculs, et tu as voulu enlever des
+nombres ou des expressions qui étaient présents au numérateur et au
+dénominateur. Mais il ne suffit pas d'être <i>présent</i> pour être un
+<b>facteur commun</b>.</li>
+<li>Tu as oublié de factoriser correctement une expression pour faire
+apparaître les <b>facteurs communs</b> entre une expression au
+numérateur et une expression au dénominateur.</li>
+</ol>
+
+<div class="question*" id="org10945e1">
+<p>
+Dans quel cas te trouvais-tu ?
+</p>
+
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org4f72ff9" class="outline-4">
+<h4 id="org4f72ff9"><span class="section-number-4">1.6.2.</span> L'<a href="#orgbfec4b7">addition</a> de fraction numérateur-numérateur, dénominateur-dénominateur</h4>
+<div class="outline-text-4" id="text-1-6-2">
+</div>
+<ol class="org-ol">
+<li><a id="orgc95b65a"></a>Forme de l'erreur.<br />
+<div class="outline-text-5" id="text-1-6-2-1">
+<div class="ex" id="org053cd73">
+<p>
+On peut retrouver l'erreur sous plusieurs forme. Avec des chiffres, on
+peut imaginer une copie d'un élève qui comporte cette égalité :
+\[
+\frac{1}{4} +  \frac{3}{5} = \frac{1 + 3}{4 + 5}
+\]
+qui est *fausse* !
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="org49286b2"></a>Pourquoi je fais cette erreur ? Comment se corriger ?<br />
+<div class="outline-text-5" id="text-1-6-2-2">
+<p>
+Plusieurs causes possibles, dont :
+</p>
+<ol class="org-ol">
+<li>Tu confonds l'<a href="#orgbfec4b7">addition</a> avec la <a href="#org4ccf329">multiplication</a> (<i>confusion
+d'opérations</i>). Il faut revoir la fiche associée « Comment ne plus
+jamais confondre l'<a href="#orgbfec4b7">addition</a> et la <a href="#org4ccf329">multiplication</a>».</li>
+<li>Tu appliques la formule de la <a href="#org4ccf329">multiplication</a> à celle de
+l'<a href="#orgbfec4b7">addition</a>. (<i>confusion dans la méthode</i>). Dans ce cas, tu penses à
+tort avoir compris l'<a href="#orgbfec4b7">addition</a> et la <a href="#org4ccf329">multiplication</a> d'une fraction,
+mais tu les confonds encore. Il faut prendre le temps de reprendre
+les explications calmement du cours sur les fractions.</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org5479ee9" class="outline-4">
+<h4 id="org5479ee9"><span class="section-number-4">1.6.3.</span> Je laisse des fractions non simplifiées dans mes calculs.</h4>
+<div class="outline-text-4" id="text-1-6-3">
+</div>
+<ol class="org-ol">
+<li><a id="org1aa1207"></a>Forme de l'erreur<br />
+<div class="outline-text-5" id="text-1-6-3-1">
+<p>
+Dans un calcul, à la place de \(\frac{1}{3}\), je laisse \(\frac{5}{15}\)
+dans mes calculs.
+</p>
+
+<p>
+Bien qu'il est vrai que \(\frac{1}{3} = \frac{5}{15}\), il faut
+<b>toujours</b> simplifier au maximum vos fractions. Il y a plusieurs
+avantages :
+</p>
+<ul class="org-ul">
+<li>Cela simplifie les calculs,</li>
+<li>Cela raccourcit l'écriture des calculs, et ils sont plus faciles à relire.</li>
+<li>Cela montre que vous avez compris l'égalité entre les fractions.</li>
+<li>Cela évite de traîner des fractions qui sont en fait des nombres
+entiers par exemple \(\frac{10}{5} = 2\)</li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="orgd590379"></a>Pourquoi je fais cette erreur ? Comment se corriger ?<br />
+<div class="outline-text-5" id="text-1-6-3-2">
+<p>
+Tu fais cette erreur surement parce que tu préfères ne pas te tromper
+dans ta simplification, au prix de laisser une fraction
+(potentiellement) énorme. 
+</p>
+
+<p>
+Les simplifications qui donnent des entiers sont pourtant
+<i>essentielles</i>. Ainsi, il faut apprendre à faire correspondre ces
+fractions :
+\[
+\frac{24}{6} \quad \frac{12}{6} \quad \frac{21}{7} \quad \ldots
+\]
+À des entiers. Pour cela, remarque que systématiquement, le numérateur
+<b>est dans la table de <a href="#org4ccf329">multiplication</a> du dénominateur</b> (\(24\) est dans
+la table de \(6\) , \(21\) est dans la table de \(7\), etc). 
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org23d12ac" class="outline-2">
+<h2 id="org23d12ac"><span class="section-number-2">2.</span> Exercices</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org9e478d7" class="outline-3">
+<h3 id="org9e478d7"><span class="section-number-3">2.1.</span> Compléter par un nombre (fractions équivalentes)</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Compléter par le bon nombre :
+</p>
+
+<div class="align*" id="orgeaf80cd">
+<p>
+\frac{72}{56} = \frac{9}{\ldots}<br />
+\frac{12}{\ldots} = \frac{132}{66}<br />
+\frac{36}{20} = \frac{9}{\ldots}<br />
+\frac{54}{\ldots} = \frac{9}{10}<br />
+\frac{9}{\ldots} = \frac{63}{14}<br />
+\frac{84}{\ldots} = \frac{7}{12}<br />
+\frac{11}{9} = \frac{66}{\ldots}<br />
+\frac{11}{\ldots} = \frac{44}{40}<br />
+\frac{24}{\ldots} = \frac{6}{10}<br />
+</p>
+
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org4b77ba3" class="outline-3">
+<h3 id="org4b77ba3"><span class="section-number-3">2.2.</span> Questions</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<div id="orgb7aaab9" class="figure">
+<p><img src="images/questions-inverse-operation.svg" alt="questions-inverse-operation.svg" class="org-svg" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgd9dcca8" class="outline-3">
+<h3 id="orgd9dcca8"><span class="section-number-3">2.3.</span> Exercices</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-03-19 mar. 10:37</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<!-- 2024-03-19 mar. 10:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Identités remarquables</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Identités remarquables</h1>
+
+<div id="outline-container-org2e38705" class="outline-2">
+<h2 id="org2e38705"><span class="section-number-2">1.</span> Cours&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cours">cours</span></span></h2>
+<div class="outline-text-2" id="text-1">
+</div>
+
+<div id="outline-container-org9a8a8f7" class="outline-3">
+<h3 id="org9a8a8f7"><span class="section-number-3">1.1.</span> Première identité remarquable</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="prop" id="orgcdaa4fd">
+<p>
+Quelque soit \(a, b \in \mathbb{R}\), on a :
+\[
+\boxed{(a + b)^{2} = a^2+2ab+b^2}
+\]
+</p>
+
+</div>
+
+<div class="dem" id="orgb2f42e9">
+<p>
+On développe l'expression \((a+b)^2\) :
+</p>
+\begin{align*}
+  (a+b)^2&=(a + b)(a+b)\\
+         &= a\times a + a \times b + b \times a +b \times b \\
+         &= a^2 + ab + ba + b^2 \\
+         &= a^2 + 2ab + b^2 
+\end{align*}
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0b5bae7" class="outline-3">
+<h3 id="org0b5bae7"><span class="section-number-3">1.2.</span> Deuxième identité remarquable</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="prop" id="orgaa91830">
+<p>
+Quelque soit \(a, b \in \mathbb{R}\), on a :
+\[
+\boxed{(a - b)^{2} = a^2-2ab+b^2}
+\]
+</p>
+
+</div>
+
+<div class="dem" id="orgf01496e">
+<p>
+On développe l'expression \((a-b)^2\) :
+</p>
+\begin{align*}
+  (a-b)^2&=(a - b)(a-b)\\
+         &= a\times a - a \times b - b \times a -b \times (-b) \\
+         &= a^2 - ab - ba + b^2 \\
+         &= a^2 - 2ab + b^2 
+\end{align*}
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgccf9ef9" class="outline-3">
+<h3 id="orgccf9ef9"><span class="section-number-3">1.3.</span> Troisième identité remarquable</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="prop" id="org941afab">
+<p>
+Quelque soit \(a, b \in \mathbb{R}\), on a :
+\[
+\boxed{(a+b)(a-b) = a^2 - b^{2}}
+\]
+</p>
+
+</div>
+
+<div class="dem" id="orgd7940fb">
+<p>
+On développe le terme de gauche :
+</p>
+\begin{align*}
+  (a+b)(a-b) &= a \times a - a \times b + b \times a + b \times (-b) \\
+             &= a^2 - ab + ba - b^2 \\
+             &= a^2 - b^2
+\end{align*}
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3f20a4f" class="outline-2">
+<h2 id="org3f20a4f"><span class="section-number-2">2.</span> Substitution pour savoir utiliser l'identité avec \(a\) et \(b\) entiers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="presentation">presentation</span></span></h2>
+<div class="outline-text-2" id="text-2">
+</div>
+
+<div id="outline-container-org1842d27" class="outline-3">
+<h3 id="org1842d27"><span class="section-number-3">2.1.</span> Substitution pour commencer</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Donner la valeur de chaque expression, pour \(a = 9\) :
+</p>
+
+<ol class="org-ol">
+<li>\(2a = \ldots\)</li>
+<li>\(3a = \ldots\)</li>
+<li>\(-a = \ldots\)</li>
+<li>\(a^2 = \ldots\)</li>
+<li>\(\sqrt{a} = \ldots\)</li>
+<li>\(\frac{a}{2} = \ldots\)</li>
+<li>\(\sqrt{a^2} = \ldots\)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org13085e5" class="outline-3">
+<h3 id="org13085e5"><span class="section-number-3">2.2.</span> Savoir substituer, première partie</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Donner la valeur de chaque expression, pour \(a = 3\) et \(b = 2\).
+</p>
+
+<ol class="org-ol">
+<li>\(a^2 = \ldots\)</li>
+<li>\(-a^2= \ldots\)</li>
+<li>\(-a = \ldots\)</li>
+<li>\(a + b = \ldots\)</li>
+<li>\(ab = \ldots\)</li>
+<li>\(2ab = \ldots\)</li>
+<li>\((-a)^2 = \ldots\)</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orga566cff" class="outline-3">
+<h3 id="orga566cff"><span class="section-number-3">2.3.</span> Savoir substituer, deuxième et dernière partie.</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Même consigne, pour \(a = 3\) et \(b = -2\)
+</p>
+
+<ol class="org-ol">
+<li>\(b^2 = \ldots\)</li>
+<li>\(-b = \ldots\)</li>
+<li>\(a + b = \ldots\)</li>
+<li>\(2ab = \ldots\)</li>
+<li>\(-2ab = \ldots\)</li>
+<li>Fin ! Bien joué à tous !</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge7cd763" class="outline-2">
+<h2 id="orge7cd763"><span class="section-number-2">3.</span> Substitution avec des inconnues&#xa0;&#xa0;&#xa0;<span class="tag"><span class="presentation">presentation</span></span></h2>
+<div class="outline-text-2" id="text-3">
+</div>
+
+<div id="outline-container-org0ef01e1" class="outline-3">
+<h3 id="org0ef01e1"><span class="section-number-3">3.1.</span> Avec des inconnues</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Simplifier chaque expression avec \(a = 3x\) où \(x\) est une inconnue.
+</p>
+
+<ol class="org-ol">
+<li>\(2a= \ldots\)</li>
+<li>\(10a = \ldots\)</li>
+<li>\(\frac{a}{3} = \ldots\)</li>
+<li>\(a + 2x = \ldots\)</li>
+<li>\(a \times x = \ldots\)</li>
+<li>\(a^2 = \ldots\)</li>
+<li>\(a^3 = \ldots\)</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0e7cd36" class="outline-2">
+<h2 id="org0e7cd36"><span class="section-number-2">4.</span> Utiliser les identités remarquables avec des nombres&#xa0;&#xa0;&#xa0;<span class="tag"><span class="presentation">presentation</span></span></h2>
+<div class="outline-text-2" id="text-4">
+</div>
+
+<div id="outline-container-orgc5b6d3a" class="outline-3">
+<h3 id="orgc5b6d3a"><span class="section-number-3">4.1.</span> L'utiliser avec des nombres</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+En utilisant une identité remarquable, développer chaque expression
+(on ne demande pas de calculs) :
+</p>
+
+<p>
+<i>Les identités remarquables ne servent pas à ça ! C'est juste pour
+vous faire <b>pratiquer</b> les identités</i>.
+</p>
+
+<ol class="org-ol">
+<li>\((3 + 4)^2= 3^2 + 2\times 3 \times 4 + 4^{2}\) mais on sait que le résultat vaut \(49\)</li>
+<li>\((3 + 8)^2 = \ldots\) et on sait que le résultat vaut \(\ldots\)</li>
+<li>\((3 - 4)^2 = \ldots\) et on sait que le résultat vaut \(\ldots\)</li>
+<li>\((5 - 3)^2 = \ldots\) et on sait que le résultat vaut \(\ldots\)</li>
+<li>\((3+4)(3-4) = \ldots\) et on sait que le résultat vaut \(\ldots\)</li>
+<li>\((4+5)(4-5) = \ldots\) et on sait que le résultat vaut \(\ldots\)</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgdb592fc" class="outline-3">
+<h3 id="orgdb592fc"><span class="section-number-3">4.2.</span> Utiliser des identités remarquables pour calculer des carrés astucieusement</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Calculer astucieusement (on cherche le résultat avec des calculs les
+plus faciles possibles)
+</p>
+
+<ol class="org-ol">
+<li>\(24^2 = (20 + 4)^2 = 20^2 + 2\times 20 \times 4 + 4^2 = 400 + 160 +
+   16 = 576\)</li>
+<li>\(35^2 = \ldots\)</li>
+<li>\(13^2 = \ldots\)</li>
+<li>\(52^2 = \ldots\), puis remarquez que \(52 = 13 \times \ldots\)</li>
+<li>\(39^2 = (40 - 1)^2 = 40^2 - 2 \times 40 \times 1 + 1^2 = 1600 -
+   80 + 1 = 1520 + 1= 1521\)</li>
+<li>\(19^2 = \ldots\)</li>
+<li>\(17^2 - 13^{2} = (15 + 2)(15 - 2) = \ldots\)</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb57dba6" class="outline-2">
+<h2 id="orgb57dba6"><span class="section-number-2">5.</span> Utiliser l'identités remarquables avec des inconnues &#x2013; développer&#xa0;&#xa0;&#xa0;<span class="tag"><span class="presentation">presentation</span></span></h2>
+<div class="outline-text-2" id="text-5">
+</div>
+
+<div id="outline-container-org017cdc3" class="outline-3">
+<h3 id="org017cdc3"><span class="section-number-3">5.1.</span> Comment reconnaître une forme factorisée ? &#x2013; Explication</h3>
+</div>
+
+<div id="outline-container-orge934657" class="outline-3">
+<h3 id="orge934657"><span class="section-number-3">5.2.</span> Reconnaître une expression factorisée : exercice</h3>
+<div class="outline-text-3" id="text-5-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Expression</th>
+<th scope="col" class="org-left">Forme factorisée ?</th>
+<th scope="col" class="org-left">Formée développée et simplifiée ?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(3x + 1\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">\(3x\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">\(x(x-1)\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">\(x + (x-1)\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">\((x - 1)^2\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">\(x^{2}-2x+1\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org58ed5bb" class="outline-3">
+<h3 id="org58ed5bb"><span class="section-number-3">5.3.</span> Que signifie développer ?</h3>
+<div class="outline-text-3" id="text-5-3">
+</div>
+<div id="outline-container-orgda4ac30" class="outline-4">
+<h4 id="orgda4ac30"><span class="section-number-4">5.3.1.</span> Définition</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<p>
+Développer une expression signifie transformer une expression
+factorisée en une expression développée. Une expression sous forme
+développée sera toujours simplifiée au maximum.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3a24b86" class="outline-4">
+<h4 id="org3a24b86"><span class="section-number-4">5.3.2.</span> Développer</h4>
+<div class="outline-text-4" id="text-5-3-2">
+<div class="ex" id="org5687d8b">
+\begin{align*}
+  (x - 2)(x - 1) &= x^{2} - x - 2x + 2 \\
+  (x - 2)(x - 1) &= x^{2} - 3x + 2
+\end{align*}
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeaf2d6d" class="outline-3">
+<h3 id="orgeaf2d6d"><span class="section-number-3">5.4.</span> Développer chaque expression</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+Développer, et simplifier, les expressions suivantes :
+</p>
+<ol class="org-ol">
+<li>\(A(x) = 3(x + 2)\)</li>
+<li>\(B(x) = 3x(x+2)\)</li>
+<li>\(C(x) = (3x + 1)(x+2)\)</li>
+<li>\(D(x) = (3x - 1)(x + 2)\)</li>
+<li>\(E(x) = (3x - 1)(x - 2)\)</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org8d00e95" class="outline-3">
+<h3 id="org8d00e95"><span class="section-number-3">5.5.</span> Identités remarquables, lien avec la factorisation et le développement</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+<i>Prenez des notes dans votre cours !</i>
+</p>
+
+<p>
+\[
+(a + b)^2 = a^2 + 2ab + b^2
+\]
+</p>
+
+<p>
+\[
+(a - b)^2 = a^2 + 2ab + b^2
+\]
+</p>
+
+<p>
+\[
+(a-b)(a+b) = a^2 - b^{2}
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4a96832" class="outline-3">
+<h3 id="org4a96832"><span class="section-number-3">5.6.</span> Voir les identités remarquables</h3>
+<div class="outline-text-3" id="text-5-6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Expression</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">I.R</th>
+<th scope="col" class="org-left">\(a=\ldots\) et \(b = \ldots\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\((2x + 1)^{2}\)</td>
+<td class="org-left">factorisée</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">\((2x-1)^{2}\)</td>
+<td class="org-left">factorisée</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">factorisée</td>
+<td class="org-left">première</td>
+<td class="org-left">\(a = 3x\) et \(b=1\)</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">factorisée</td>
+<td class="org-left">deuxième</td>
+<td class="org-left">\(a=x\) et \(b = 2\)</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">développée</td>
+<td class="org-left">première</td>
+<td class="org-left">\(a=2x\) et \(b = 7\)</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">\((3x-1)(3x + 1)\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org1b4a81b" class="outline-3">
+<h3 id="org1b4a81b"><span class="section-number-3">5.7.</span> Développer en utilisant une identité remarquable &#x2013; Explication</h3>
+<div class="outline-text-3" id="text-5-7">
+<p>
+On cherche à développer l'expression :
+\[
+A(x) = (x - 3)^{2}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org9aad29d" class="outline-3">
+<h3 id="org9aad29d"><span class="section-number-3">5.8.</span> Développer en utilisant une identité remarquable &#x2013; À vous de jouer.</h3>
+<div class="outline-text-3" id="text-5-8">
+<p>
+Développer les expressions suivantes :
+</p>
+<ol class="org-ol">
+<li>\(A(x) = (x + 5)^2\)</li>
+<li>\(B(x) = (3x + 6)^2\)</li>
+<li>\(C(x) = (3x - 7)^2\)</li>
+<li>\(D(x) = (3x + 8)(3x - 8)\)</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd37abd7" class="outline-2">
+<h2 id="orgd37abd7"><span class="section-number-2">6.</span> Exercices de révisions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="presentation">presentation</span></span></h2>
+<div class="outline-text-2" id="text-6">
+</div>
+
+<div id="outline-container-org53bc630" class="outline-3">
+<h3 id="org53bc630"><span class="section-number-3">6.1.</span> Développer ces trois expressions</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Vous préciserez dans votre tête quelle identité remarquable vous utilisez.
+</p>
+
+<ol class="org-ol">
+<li>\(A(x) = (2x - 1)^2\)</li>
+<li>\(B(x) = (4x + 2)^2\)</li>
+<li>\(C(x) = (2x - 1)(2x + 1)\)</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org38b023e" class="outline-3">
+<h3 id="org38b023e"><span class="section-number-3">6.2.</span> Compléter ce tableau</h3>
+<div class="outline-text-3" id="text-6-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Expression</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">I.R</th>
+<th scope="col" class="org-left">\(a=\ldots\) et \(b = \ldots\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\((2x + 3)^{2}\)</td>
+<td class="org-left">factorisée</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">\((3x + 5)^{2}\)</td>
+<td class="org-left">factorisée</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">développée</td>
+<td class="org-left">deuxième</td>
+<td class="org-left">\(a=x\) et \(b=1\)</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">factorisée</td>
+<td class="org-left">première</td>
+<td class="org-left">\(a = 4x\) et \(b=4\)</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">factorisée</td>
+<td class="org-left">deuxième</td>
+<td class="org-left">\(a=x\) et \(b = 8\)</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">développée</td>
+<td class="org-left">première</td>
+<td class="org-left">\(a=3x\) et \(b = 7\)</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">\((4x-3)(4x + 3)\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-03-19 mar. 10:37</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

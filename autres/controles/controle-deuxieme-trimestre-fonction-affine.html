@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<!-- 2024-03-19 mar. 10:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contrôle sur les fonctions affines &#x2013; 7 Mars 2023.</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Contrôle sur les fonctions affines &#x2013; 7 Mars 2023.
+<br />
+<span class="subtitle">noté sur 20 points</span>
+</h1>
+
+<div id="outline-container-orgfac8adc" class="outline-2">
+<h2 id="orgfac8adc">Exercice 1 &#x2013; \(6\) points</h2>
+<div class="outline-text-2" id="text-orgfac8adc">
+<div class="minipage" id="org3615b18">
+<p>
+Soit \(f\) une fonction affine représenté sur le graphique ci-contre. On
+définit comme dans le cours les valeurs de \(a\) et \(b\) telles que :
+\[
+f(x) = a x + b
+\]
+</p>
+
+</div>
+<div class="minipage" id="org5d10c60">
+
+<div id="org51e0897" class="figure">
+<p><img src="images/faffinegraphe.svg" alt="faffinegraphe.svg" class="org-svg" />
+</p>
+</div>
+
+</div>
+<ol class="org-ol">
+<li>(1) Rappelez le nom des valeurs \(a\) et \(b\).</li>
+<li>(1) D'après le graphique, quelle est la valeur de \(b\) ?</li>
+<li>(1) Par lecture graphique, quel est le sens de variation de la
+fonction \(f\) sur \(\mathbb{R}\) ?</li>
+<li>(1) D'après la question précédente, que peut-on en déduire sur la
+valeur \(a\) ?</li>
+<li>(1) Par lecture graphique, quel est la valeur de \(x\) telle que
+\(f(x) = 0\) ?</li>
+<li>(1) Quelle est la valeur de \(a\) ? Vous présenterez vos calculs avec
+soin, en utilisant correctement les notations \(\Delta x\) et \(\Delta
+   y\), et vous utiliserez les points marqués sur le graphique.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org63c9c22" class="outline-2">
+<h2 id="org63c9c22">Exercice 2 &#x2013; \(3\) points</h2>
+<div class="outline-text-2" id="text-org63c9c22">
+<p>
+On définit la fonction affine \(g\) par l'expression :
+\[
+g(x) = 2 - 3x
+\]
+</p>
+
+<ol class="org-ol">
+<li>(0.5) Quelle est la valeur de \(a\) ?</li>
+<li>(0.5) Quel est le sens de variation de la fonction \(g\) sur \(\mathbb{R}\) ?</li>
+<li>(2) Donner le tableau de <b>variation</b> de la fonction \(g\) sur \(\mathbb{R}\).</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org34c4750" class="outline-2">
+<h2 id="org34c4750">Exercice 3 &#x2013; \(3\) points</h2>
+<div class="outline-text-2" id="text-org34c4750">
+<p>
+On définit la fonction affine \(h\) par l'expression :
+\[
+h(x) = -3(x + 1)
+\]
+</p>
+<ol class="org-ol">
+<li>(0.5) Donnez l'expression développée de \(h\).</li>
+<li>(0.5) Montrez que l'équation \(h(x)=0\) admet comme unique solution
+\(x = -1\), avec l'expression précédemment obtenue.</li>
+<li>(2) Donner le tableau de <b>signe</b> de \(h\) sur \(\mathbb{R}\), en
+justifiant.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org12b5cbb" class="outline-2">
+<h2 id="org12b5cbb">Exercice 4 &#x2013; \(4\) points</h2>
+<div class="outline-text-2" id="text-org12b5cbb">
+<p>
+On considère \(i\) la fonction définie par :
+\[
+i(x) = - 8 x^{2} + 14 x - 3
+\]
+<i>Attention, \(i\) n'est pas une fonction affine !</i>
+</p>
+
+<ol class="org-ol">
+<li>(1) Montrer, en développant, que \(i\) admet aussi comme expression
+\[i(x) = (-2x + 3)(4x - 1)\]</li>
+</ol>
+<p>
+On pose \(i_{1}(x) = -2x + 3\) et \(i_2(x) = 4x - 1\)
+</p>
+<ol class="org-ol">
+<li value="2">(1) Résolvez les équations \(i_{1}(x) = 0\) et \(i_{2}(x) = 0\).</li>
+<li>(2) Donner le tableau de signe de \(i\) sur \(\mathbb{R}\). Vous
+donnerez toutes les lignes qui vous ont permises de trouver le
+signe de \(i\) sur \(\mathbb{R}\).</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org37a36ee" class="outline-2">
+<h2 id="org37a36ee">Exercice 5 &#x2013; \(4\) points</h2>
+<div class="outline-text-2" id="text-org37a36ee">
+<p>
+Deux fournisseurs d'accès à internet propose un forfait.
+</p>
+
+<p>
+<span class="underline">Premier forfait, de l'entreprise F :</span> \(50\) euros de frais de dossier, puis \(30\) euros
+par mois.
+</p>
+
+<p>
+<span class="underline">Deuxième forfait de l'entreprise G :</span> \(35\) euros de frais de dossier, puis \(32\) euros
+par mois.
+</p>
+
+<p>
+Les frais de dossier sont payés lors de la mise en service au début du
+forfait. Ils ne sont donc payés qu'une seule fois.
+</p>
+<ol class="org-ol">
+<li>(1) Montrer que si on appelle \(f\) et \(g\) les expressions qui
+associent le coût du forfait internet de l'entreprise F et
+G au bout de \(x\) mois, alors on a :
+\[
+   f(x) = 30x + 50 \qquad \text{et} \qquad g(x) = 32 x + 35
+   \]
+<i>Vous pouvez donner un raisonnement uniquement pour un seul
+forfait</i>.</li>
+<li>(0.5) Calculez \(f(1)\). À quoi correspond ce résultat ?</li>
+<li>(0.5) Résolvez l'équation \(f(x) = 1000\). À quoi correspond ce
+résultat ?</li>
+<li>(1) Résolvez l'équation \(f(x) = g(x)\) ? À quoi correspond ce
+résultat ?</li>
+<li>(1) Julie a besoin d'un forfait internet pendant \(7\) mois. Vers
+quelle entreprise devrait-elle se tourner pour payer le moins cher
+possible ? Vous pouvez justifiez à l'aide de la question
+précédente, ou indépendamment de la question précédente.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga88007d" class="outline-2">
+<h2 id="orga88007d">Exercice 6 &#x2013; \(2\) points BONUS</h2>
+<div class="outline-text-2" id="text-orga88007d">
+<p>
+Charlie confie le cryptogramme de sa carte bancaire<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> (qui est un code à
+trois chiffres qui figure au dos de sa carte) à ses amis Alice et Bob.
+Il souhaite être sûr qu'Alice et Bob puissent retrouver ensemble son
+cryptogramme, mais il veut s'assurer qu'aucun des deux séparés ne
+peuvent le retrouver.
+</p>
+
+<p>
+Charlie confie à Alice une clé, qui vaut \(A = 100\) et qu'elle doit
+garde secrète. Charlie fait de même avec Bob fait de même et sa clé
+vaut \(B = 94\).
+</p>
+
+<p>
+Le cryptogramme de Charlie correspond à <b>l'ordonnée à l'origine</b> de la
+fonction affine \(f\) telle que : \[ f(1) = A \qquad \text{ et } \qquad f(3) = B \]
+</p>
+
+<ol class="org-ol">
+<li>(1) Pourquoi Alice, sans l'aide de Bob ou vice versa, ne peut pas
+retrouver le cryptogramme de Charlie ?</li>
+<li>(1) À l'aide des nombres \(A\) et \(B\), retrouvez le cryptogramme de la
+carte bleu de Charlie. Vous donnerez le détail de votre
+raisonnement. Toute trace de recherche sera valorisée.</li>
+<li>(Bonus du bonus), proposez une méthode pour partager un code de la
+même manière que Charlie mais avec trois<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup> personnes, disons Alice,
+Bob et Damien.</li>
+</ol>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Notes de bas de page: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Ne faites jamais ça ! 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+En fait, on peut généraliser à autant de personnes que l'on veut. 
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-03-19 mar. 10:37</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

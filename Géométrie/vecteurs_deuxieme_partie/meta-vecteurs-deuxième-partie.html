@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<!-- 2024-03-19 mar. 10:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Méta vecteurs (deuxième partie)</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Méta vecteurs (deuxième partie)</h1>
+
+<div id="outline-container-orga9040a0" class="outline-2">
+<h2 id="orga9040a0"><span class="section-number-2">1.</span> Progression du cours des vecteurs (deuxième partie)</h2>
+<div class="outline-text-2" id="text-1">
+
+<div id="org1ef93f3" class="figure">
+<p><img src="progression-vecteur-deuxieme-partie.png" alt="progression-vecteur-deuxieme-partie.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org868d8c4" class="outline-2">
+<h2 id="org868d8c4"><span class="section-number-2">2.</span> Cours : vecteurs dans un repère</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgc70b344" class="outline-3">
+<h3 id="orgc70b344"><span class="section-number-3">2.1.</span> Vecteurs dans un repère</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+
+<div id="outline-container-orgfcec3ad" class="outline-4">
+<h4 id="orgfcec3ad"><span class="section-number-4">2.1.1.</span> Base, et base orthonormé</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<div class="defi" id="org5103faf">
+<p>
+Soit \(\vec{u}\) et \(\vec{v}\) deux vecteurs non colinéaires non nuls. Alors
+\(\vec{u}\) et \(\vec{v}\) forment une base vectorielle du plan.
+</p>
+
+</div>
+
+<div class="defi" id="org54e0801">
+<p>
+Soit une base vectorielle \((\vec{u}, \vec{v})\). On dit qu'un vecteur \(\vec{w}\)
+se <b>décompose</b> dans cette base s'il existe deux nombres \(a\) et \(b\) tels que :
+\[
+\vec{w} = a \vec{u} + b \vec{v}
+\]
+</p>
+
+</div>
+
+
+<div id="orge4fc99f" class="figure">
+<p><img src="images/decompositionBase.svg" alt="decompositionBase.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure&nbsp;1&nbsp;: </span>Un exemple de base donné par \((\vec{u}, \vec{v})\). On a décomposé le vecteur \(\vec{w}\).</p>
+</div>
+
+<div class="prop" id="org811e195">
+<p>
+Tout vecteur \(\vec{w}\) peut se décomposer de manière unique dans une base
+\((\vec{u}, \vec{v})\) donnée.
+</p>
+
+</div>
+
+<div class="defi" id="org6968e90">
+<p>
+On appelle coordonnée du vecteur \(\vec{w}\) dans la base \((\vec{u}, \vec{v})\) les nombres \(a\) et \(b\)
+tels que \(\vec{w} = a\vec{u} + b\vec{v}\) et on écrira \(\vec{w} = (a; b)\), ou
+bien \(\vec{w}=\left(\begin{array}{c} a \\ b \end{array}\right)\)
+</p>
+
+</div>
+
+<div class="ex" id="org2c38d2d">
+<p>
+Dans la situation précédente, on a \(\vec{w} = (0,7; 1,5)\) dans la base
+\((\vec{u}, \vec{v})\)
+</p>
+
+</div>
+
+<div class="defi" id="org715dace">
+<p>
+Une base orthonormée \((\vec{i}, \vec{j})\) est une base telle que :
+</p>
+<ul class="org-ul">
+<li>La norme de \(\vec{i}\) et \(\vec{j}\) vaut \(1\).</li>
+<li>Les directions de \(\vec{i}\) et \(\vec{j}\) sont perpendiculaires.</li>
+</ul>
+
+</div>
+
+<div class="ex" id="orgf4c4771">
+<p>
+Comment se décompose \(\vec{u}\) dans la base \((\vec{i}, \vec{j})\) ?
+</p>
+
+<div id="orgb7c028f" class="figure">
+<p><img src="images/lireCoordonneBaseOrtho.svg" alt="lireCoordonneBaseOrtho.svg" class="org-svg" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org24635cf" class="outline-4">
+<h4 id="org24635cf"><span class="section-number-4">2.1.2.</span> Coordonnées d'un vecteur dans une base</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<div class="defi" id="orgd5a4264">
+<p>
+Si on a :
+\[
+\vec{u} = x \vec{i} + y \vec{j} \quad x,y \in \mathbb{R}
+\]
+Alors, on dira que les coordonnées du vecteurs \(\vec{u}\) dans la base
+\((\vec{i}, \vec{j})\), sont \(\vec{u} = \left(\begin{array}{c} x \\ y \end{array}\right)\).
+</p>
+
+</div>
+
+<div class="prop" id="orgfeee62f">
+<p>
+Deux vecteurs qui admettent les même coordonnées dans une base sont égaux.
+</p>
+
+</div>
+
+<div class="prop" id="orgddb505c">
+<p>
+Les coordonnées du vecteur somme de deux vecteurs est donné par la somme des coordonnées.
+</p>
+
+</div>
+
+<div class="prop" id="org694036e">
+<p>
+Le produit par un scalaire multiplie chacune des coordonnées par ce scalaire.
+</p>
+
+</div>
+
+<div class="prop" id="org18a1aae">
+<p>
+Dans une base orthonormée, la norme d'un vecteur \(\vec{u} = a \vec{i} + b
+\vec{j}\) est donnée par :
+\[
+\vec{u} = \sqrt{a^2 + b^2}
+\]
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgb4c0a7f" class="outline-4">
+<h4 id="orgb4c0a7f"><span class="section-number-4">2.1.3.</span> Repère orthonormé</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<div class="defi" id="org5ce8ba7">
+<p>
+On appelle repère orthonormé la donnée d'un point \(O\) que l'on appelle l'origine et
+d'une base orthonormée \((\vec{i};\vec{j})\).
+</p>
+
+<p>
+Pour tout \(x, y\) des nombres réels, nous avons :
+\[
+M = (x; y) \iff \overrightarrow{OM} = \left( \begin{array}{c} x \\ y \end{array} \right)
+\]
+</p>
+
+</div>
+
+<div class="prop" id="orga933d01">
+<p>
+Soit \(A = (x_A; y_A)\) et \(B =(x_B;y_B)\) deux points dans un repère orthonormé.
+Les coordonnées de \(\overrightarrow{AB}\) sont données par :
+\[
+\overrightarrow{AB} = \left(\begin{array}{c} x_B - x_A \\ y_B - y_A \end{array}\right)
+\]
+</p>
+
+</div>
+
+<div class="prop" id="org204e254">
+<p>
+Trois points \(A\), \(B\) et \(C\) non confondus sont alignés si et seulement si deux
+vecteurs formés par deux points différents parmi \(A\), \(B\) et \(C\) sont colinéaires.
+</p>
+
+</div>
+<p>
+:EXPORT<sub>FILE</sub><sub>NAME</sub>: cours<sub>vecteurs</sub><sub>repere.pdf</sub>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7bc904e" class="outline-3">
+<h3 id="org7bc904e"><span class="section-number-3">2.2.</span> Déterminant</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+
+<div id="outline-container-orgce40184" class="outline-4">
+<h4 id="orgce40184"><span class="section-number-4">2.2.1.</span> Définition du déterminant de deux vecteurs</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+Dans ce cours, on considère toujours un repère orthonormé \((O;
+\vec{i};\vec{j})\).
+</p>
+
+<div class="defi" id="orgca0cdfe">
+<p>
+Soit \(\vec{u} = \left(\begin{array}{c} a \\ b \end{array}\right)\)
+\(\vec{v} = \left(\begin{array}{c} c \\ d \end{array}\right)\) deux
+vecteurs et leurs coordonnées. Alors, on définit le <i>déterminant</i> de
+ces deux vecteurs par :
+\[
+\boxed{\textrm{det}(\vec{u};\vec{v}) = ad - bc}
+\]
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org46a5f6b" class="outline-4">
+<h4 id="org46a5f6b"><span class="section-number-4">2.2.2.</span> Utilisation du déterminant</h4>
+<div class="outline-text-4" id="text-2-2-2">
+</div>
+<ol class="org-ol">
+<li><a id="org6f49708"></a>Pour savoir si deux vecteurs sont colinéaires<br />
+<div class="outline-text-5" id="text-2-2-2-1">
+<div class="prop" id="org55b7213">
+<p>
+Deux vecteurs sont colinéaires si et seulement si leur déterminant est nul.
+</p>
+
+</div>
+
+
+<div id="org6d5525d" class="figure">
+<p><img src="images/vecteur-colineaires.svg" alt="vecteur-colineaires.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure&nbsp;2&nbsp;: </span>Que peut-on dire du déterminant des vecteurs \(\vec{u}\) et \(\vec{v}\) ?</p>
+</div>
+</div>
+</li>
+<li><a id="org3c8e781"></a>Pour calculer l'aire d'un parallélogramme<br />
+<div class="outline-text-5" id="text-2-2-2-2">
+<div class="prop" id="org2066455">
+<p>
+Le déterminant de deux vecteurs correspond, <b><b>au signe près</b></b>, à l'aire du
+parallélogramme engendré par ces deux vecteurs.
+</p>
+
+</div>
+
+
+<div id="orge0cddc4" class="figure">
+<p><img src="images/aire-parallelogramme.svg" alt="aire-parallelogramme.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure&nbsp;3&nbsp;: </span>Parallélogramme engendré par les vecteurs \(\vec{u}\) et \(\vec{v}\)</p>
+</div>
+
+<div class="ex" id="org6496613">
+<p>
+Si on considère les vecteurs \(\vec{u}\) et \(\vec{v}\) dont les
+coordonnées sont :
+\[
+\vec{u} = \left(\begin{array}{c} 3\\4 \end{array}\right) \quad \vec{v} =\left(\begin{array}{c} 1 \\ 2 \end{array}\right)
+\]
+Alors on peut en déduire que l'aire du parallélogramme engendré est :
+</p>
+
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgf2d11bf" class="outline-2">
+<h2 id="orgf2d11bf"><span class="section-number-2">3.</span> Exercices</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org35699f7" class="outline-3">
+<h3 id="org35699f7"><span class="section-number-3">3.1.</span> Lire des coordonnées de vecteurs</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-asymptote" id="org9964458">import graph;
+import geometry;
+defaultpen(fontsize(13pt));
+
+unitsize(0.7cm);
+
+
+//show(defaultcoordsys);
+string coordonne(real x,real y, string vecteur) {
+  string signey = "+";
+  if (y &lt; 0) { signey = "";}
+
+  return "$\vec{" + vecteur+ "}= " + string(x) +" \vec{u}" + signey + string(y) + "\vec{v}$";
+}
+
+int indiceLabel = 0;
+
+pair u = (-1, 1), v = (2, 1);
+
+draw(origin--u, L=Label("$\vec{u}$", Relative(0.5), S), Arrow(TeXHead), p=2bp+darkred);
+draw(origin--v, L=Label("$\vec{v}$", Relative(0.5), S), Arrow(TeXHead), p=2bp+darkgreen);
+
+string[] placerVecteur (real[] a,real[] b, pair ptOrigin = origin) //retourne la correction
+{
+  string[] labelvecteur = array("abcdefghijklmnopqrstwxyz"); //pas du u ni v
+  string[] corrige;
+  int n = a.length;
+  int m = b.length;
+  for (int i = 0; i &lt;n ; ++i) {
+//    for (int j = 0; j &lt;m ; ++j) {
+      draw(ptOrigin--shift(ptOrigin)*(a[i]*u+b[i]*v), L=Label("$\vec{"+labelvecteur[indiceLabel] +"}$", Relative(0.7)), Arrow());
+      corrige.push(coordonne(a[i], b[i], labelvecteur[indiceLabel]));
+      indiceLabel+=1;
+ //   }
+  }
+  return corrige;
+}
+
+void afficherCorrection ( string[] correction, pair pos =(5, 0)) {
+  string cort;
+  for (string cor : correction){
+    cort+= cor + '\n\n';
+  }
+  label(minipage(cort, 100), pos);
+}
+
+int bordureReseau = 9;
+int xmin = -bordureReseau, xmax = bordureReseau;
+int ymin = -bordureReseau, ymax = bordureReseau;
+real kmin = 0.5, kmax = 1, kinc = 0.5;
+
+//création du réseau en fonction de u et v
+pair[] reseau ;
+
+for (real kx = kmin; kx &lt;= kmax; kx = kx + kinc) {
+  for (real ky = kmin; ky &lt;= kmax; ky = ky + kinc) {
+    for (int x = xmin; x &lt;= xmax; ++x) {
+      for (int y = ymin; y&lt;= ymax; ++y) {
+        reseau.push((kx + x)*u+(ky+y)*v);
+      }
+    }
+  }
+}
+
+//afficher le réseau
+dot(reseau, p=grey+2bp);
+
+// les différents jeux de scalaire
+real[] a = {-2, 1.5, 2, -1.5, 3.5}, b = {3, 4, -2, 0, 0.5};
+real[] ap = {-2, -1}, autrep = {3, -1};
+//real[] app = {-0.8, 0.8}, bpp = { 1, -1};
+
+// différents jeux d'origines des vecteurs
+pair[] origines={origin, 0.8*u+0.8*v, -u-0.8*v };
+
+// appeler placerVecteur : 1) place les vecteurs, 2) donne la correction dans un tableau de string
+//string[] correction1 = placerVecteur(a, b, 0), correction2= placerVecteur(ap, autrep, 0.8*u+0.8*v ), correction3= placerVecteur(app, bpp, -u-0.8*v );
+string[] correction1 = placerVecteur(a, b, origin);
+string[] correction2 = placerVecteur(ap, autrep, 5*u+v);
+
+
+//afficherCorrection(correction2, 2);
+
+//afficherCorrection(correction3, 3);
+//dot(origines, purple);
+
+//label(minipage("Donner la décompositon de chaque vecteur dans la base $(\vec{u}, \vec{v})$", 100), (8, 4));
+
+real bord = 8;
+path clippage = shift((0, 4))*(-bord, -bord)--shift((0, 4))*(bord, -bord)--(bord, bord)--(-bord, bord)--cycle;
+clip(clippage);
+afficherCorrection(correction1, (11, 0));
+shipout(bbox(2mm, Fill(white)));
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-03-19 mar. 10:37</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

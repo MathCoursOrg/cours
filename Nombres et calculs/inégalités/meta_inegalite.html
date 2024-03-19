@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<!-- 2024-03-19 mar. 10:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Méta inégalités</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Méta inégalités</h1>
+
+<div id="outline-container-orgc05c6a2" class="outline-2">
+<h2 id="orgc05c6a2"><span class="section-number-2">1.</span> Le cours</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org89edea7" class="outline-3">
+<h3 id="org89edea7"><span class="section-number-3">1.1.</span> Inégalités : première partie</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+
+
+<div id="outline-container-org6322001" class="outline-4">
+<h4 id="org6322001"><span class="section-number-4">1.1.1.</span> Rappel des notations</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<div class="defi" id="orgb509a40">
+<p>
+Soit \(A\) et \(B\) deux nombres, alors :
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Inégalités</th>
+<th scope="col" class="org-left">Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(A < B\)</td>
+<td class="org-left">\(A\) est strictement plus petit que \(B\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(A > B\)</td>
+<td class="org-left">\(A\) est strictement plus grand que \(B\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(A \leq B\)</td>
+<td class="org-left">\(A\) est plus petit ou égal à \(B\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(A \geq B\)</td>
+<td class="org-left">\(A\) est plus grand ou égal à \(B\)</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge5ae74d" class="outline-4">
+<h4 id="orge5ae74d"><span class="section-number-4">1.1.2.</span> Sur l'axe des abscisses</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Pour chaque axe, donner son inéquation associée.
+</p>
+
+
+<div id="org323c136" class="figure">
+<p><img src="images/repInegaliteAbscisse.svg" alt="repInegaliteAbscisse.svg" class="org-svg" />
+</p>
+</div>
+
+
+<div class="minipage" id="org6a9d4ac">
+
+<div id="org8d63b6b" class="figure">
+<p><img src="inegalite1.svg" alt="inegalite1.svg" class="org-svg" />
+</p>
+</div>
+
+
+<div id="org3a71551" class="figure">
+<p><img src="inegalite2.svg" alt="inegalite2.svg" class="org-svg" />
+</p>
+</div>
+
+
+<div id="org272a88d" class="figure">
+<p><img src="inegalite3.svg" alt="inegalite3.svg" class="org-svg" />
+</p>
+</div>
+
+
+<div id="orga9da456" class="figure">
+<p><img src="inegalite4.svg" alt="inegalite4.svg" class="org-svg" />
+</p>
+</div>
+
+
+
+<div id="org043ce0f" class="figure">
+<p><img src="inegalite5.svg" alt="inegalite5.svg" class="org-svg" />
+</p>
+</div>
+
+
+
+<div id="org18c5d10" class="figure">
+<p><img src="inegalite6.svg" alt="inegalite6.svg" class="org-svg" />
+</p>
+</div>
+
+
+
+<div id="org0f898fb" class="figure">
+<p><img src="inegalite7.svg" alt="inegalite7.svg" class="org-svg" />
+</p>
+</div>
+
+
+
+<div id="org31af541" class="figure">
+<p><img src="inegalite8.svg" alt="inegalite8.svg" class="org-svg" />
+</p>
+</div>
+
+</div>
+<div class="minipage" id="orga76494e">
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org716362c" class="outline-4">
+<h4 id="org716362c"><span class="section-number-4">1.1.3.</span> Sur l'axe des ordonnées</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<div class="defi" id="orge44f9e2">
+<p>
+Résoudre une inéquation \(f(x) \leq k\) revient à trouver l'ensemble des
+nombres \(x\) tels que \(f(x) \leq k\).
+</p>
+
+</div>
+
+<div class="ex" id="org3ac5af0">
+<p>
+Pour quelles valeurs \(x \in \mathbb{R}\) a-t-on :
+\[2x +1\leq 7\]
+</p>
+
+<p>
+<span class="underline">Réponse :</span> Pour \(x \leq 3\). On dira que  \(2x+1 \leq 7\) si et
+seulement si \(x \leq 3\). Plus tard, on écrira l'ensemble des solutions
+sous la forme d'un intervalle.
+</p>
+
+</div>
+
+<div class="prop" id="org7324510">
+<p>
+Grâce à la représentation de la courbe d'une fonction \(f\), on peut
+résoudre graphiquement toutes les inéquations de la forme \(f(x) \leq k\).
+</p>
+
+</div>
+
+
+<div id="orge7c5ce0" class="figure">
+<p><img src="images/resInequation.svg" alt="resInequation.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure&nbsp;1&nbsp;: </span>Résolution graphique de \(f(x) \leq 7\) pour \(f(x) = 2x+1\)</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org2eee274" class="outline-3">
+<h3 id="org2eee274"><span class="section-number-3">1.2.</span> Inéquation : Résoudre des inégalités affines</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+
+<div id="outline-container-orgf977a92" class="outline-4">
+<h4 id="orgf977a92"><span class="section-number-4">1.2.1.</span> Résoudre des inéquations affines</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<div class="defi" id="org9e6dbfd">
+<p>
+Une inéquation est une équation avec une inégalité à la place d'une inégalité.
+</p>
+
+</div>
+
+<div class="prop" id="orgbdc192f">
+<p>
+Dans une inéquation, on peut <b>ajouter ou soustraire le même nombre</b> dans
+chaque terme de l'inéquation.
+</p>
+
+</div>
+
+<div class="ex" id="orga527cfb">
+<p>
+Si \(x + 3 > 12\), alors \(x > 9\).
+</p>
+
+</div>
+
+<div class="prop" id="orgb519c4f">
+<p>
+Dans une inéquation, on peut <b><b>multiplier ou diviser par un nombre
+positif non nul</b></b>  chaque terme de l'inéquation.
+</p>
+
+</div>
+
+<div class="ex" id="org6394aa1">
+<p>
+Si \(3x > 12\) alors \(x > 4\)
+</p>
+
+</div>
+
+<div class="prop" id="org661fdd8">
+<p>
+Dans une inéquation, si on multiplie ou divise <b><b>par un nombre négatif
+non nul</b></b> alors on renverse l'inéquation.
+</p>
+
+</div>
+
+<div class="ex" id="org9c643c1">
+<p>
+Si \(-3x > 12\), alors \(x < 4\).
+</p>
+
+</div>
+<div class="ex" id="orgdf0fab9">
+<p>
+En combinant toutes ces techniques, on peut résoudre des inéquations
+comme la suivante :
+\[
+-2x + 3 \leq 4x + 5
+\]
+On procède alors comme il suit :
+</p>
+\begin{align*}
+  -2x + 3 &\leq 4x + 5 \\
+  -2x &\leq 4x + 2 \\
+  -6x &\leq 2 \\
+  x &\geq \frac{2}{-6} \\
+  x & \geq -\frac{1}{3}
+\end{align*}
+<p>
+Les solutions cherchées correspondent à l'intervalle \(x \in [-1; +
+\infty[\). Vérifiez les solutions grâce à la figure suivante !
+</p>
+
+</div>
+
+
+<div id="org094f158" class="figure">
+<p><img src="images/illustrationAffine.svg" alt="illustrationAffine.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure&nbsp;2&nbsp;: </span>Représentation graphique des deux fonctions de l'exemple précédent. Retrouvez-vous le résultat espéréré ?</p>
+</div>
+
+
+<div class="prop" id="orgbf47600">
+<p>
+Les résolutions inéquations servent aussi à faire des tableaux de
+signe de fonction affine.
+</p>
+
+</div>
+
+<div class="ex" id="orgc8c4275">
+<p>
+Pour établir le tableau de signe de \(f(x) = -3x + 2\) on peut résoudre
+l'inéquation :
+\[
+-3x + 2 \geq 0
+\]
+En appliquant les techniques vues plus haut, on aboutit à \(x \leq
+\frac{2}{3}\). Donc \(f\) est positive sur l'intervalle \(x \in \left]
+-\infty; \frac{2}{3}\right]\), et négative ailleurs. On résume tout
+cela grâce au tableau de la figure <a href="#orgce123c3">3</a>.
+</p>
+
+</div>
+
+
+<div id="orgce123c3" class="figure">
+<p><img src="images/tablAffineEx.svg" alt="tablAffineEx.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure&nbsp;3&nbsp;: </span>Exemple de tableau de signe d'une fonction affine</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7139037" class="outline-4">
+<h4 id="org7139037"><span class="section-number-4">1.2.2.</span> Résoudre certaines inéquations non affines &#x2013; cas de la parabole</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<div class="ex" id="org29fc5bb">
+<p>
+Si on souhaite résoudre l'inéquation :
+\[
+x^{2} \leq 5 
+\]
+on peut commencer par tracer la courbe représentative de \(x^{2}\), et
+représenter l'axe \(y = 5\).
+</p>
+
+<p>
+On peut ainsi lire la solution :
+\vspace{2cm}
+</p>
+
+</div>
+
+
+<div id="org672e0d3" class="figure">
+<p><img src="images/inequationCarre.svg" alt="inequationCarre.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure&nbsp;4&nbsp;: </span>On résout l'inéquation \(x^2\leq 5\)</p>
+</div>
+
+
+
+<div class="question" id="org0646ec5">
+<p>
+Et que se passe-t-il si l'on souhaite résoudre l'inéquation \(x^2\geq
+5\) ?
+</p>
+
+</div>
+
+<div class="question" id="org049776d">
+<p>
+Montrer que \(x^2 - 5 = (x + \sqrt{5})(x - \sqrt{5})\). En quoi cela
+nous sert-il pour résoudre l'inéquation \(x^2 \leq 5\) ?
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-03-19 mar. 10:37</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
