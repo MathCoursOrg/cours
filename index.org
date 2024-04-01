@@ -1,6 +1,0 @@
-#+TITLE: Cours de mathématiques
-
-- [[file:fiche_plan_apprentissage_math.pdf][fiche_plan_apprentissage_math]]
-- Revisions_cross_chapitre
-  - [[file:Revisions_cross_chapitre/meta_revision_cross_chapitre.pdf][meta_revision_cross_chapitre]]
-  - [[file:Revisions_cross_chapitre/revisions_plusieurs_chapitres.pdf][revisions_plusieurs_chapitres]]
